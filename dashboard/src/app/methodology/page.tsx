@@ -108,10 +108,10 @@ export default function MethodologyPage() {
 
       <PageSection className="text-center pb-24">
         <Link
-          href="/dashboard"
+          href="/data"
           className="inline-block px-6 py-2.5 rounded-lg bg-[#051C2C] text-white text-sm font-medium hover:bg-[#0a2e44] transition-colors"
         >
-          Open dashboard →
+          See the data →
         </Link>
       </PageSection>
     </div>

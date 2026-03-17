@@ -37,5 +37,6 @@ export const NAV_ITEMS = [
   { href: "/", label: "Home" },
   { href: "/context", label: "The challenge" },
   { href: "/methodology", label: "Our approach" },
+  { href: "/data", label: "Data breakdown" },
   { href: "/dashboard", label: "Dashboard" },
 ] as const;
