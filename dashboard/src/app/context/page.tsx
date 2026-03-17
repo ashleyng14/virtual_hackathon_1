@@ -106,7 +106,7 @@ export default function ContextPage() {
           <span className="text-[#2251FF] text-sm flex-shrink-0">→</span>
           <div className="p-3 rounded-lg bg-[#051C2C] text-center" style={{ flex: 8 }}>
             <p className="text-xs font-semibold text-white">Treatment bay</p>
-            <p className="text-[10px] text-[#B3C6FF] mt-0.5">1.5 – 6+ hrs depending on acuity</p>
+            <p className="text-[10px] text-[#B3C6FF] mt-0.5">45 min – 4.5 hrs depending on acuity</p>
           </div>
           <span className="text-[#2251FF] text-sm flex-shrink-0">→</span>
           <div className="p-3 rounded-lg bg-[#EBF8FF] border border-[#B3C6FF] text-center" style={{ flex: 2 }}>
@@ -119,9 +119,9 @@ export default function ContextPage() {
           <p className="text-xs font-semibold text-[#051C2C] mb-2">Treatment time by acuity level</p>
           <div className="space-y-2">
             {[
-              { level: "High acuity", pct: "~6%", time: "~6 hrs", desc: "Cardiac emergencies, major trauma, stroke", width: "100%" },
-              { level: "Medium acuity", pct: "~44%", time: "~3 hrs", desc: "Fractures, abdominal pain, chest pain", width: "50%" },
-              { level: "Low acuity", pct: "~50%", time: "~1.5 hrs", desc: "Minor lacerations, sprains, fever", width: "25%" },
+              { level: "High acuity", pct: "~6%", time: "~4.5 hrs", desc: "Cardiac emergencies, major trauma, stroke", width: "100%" },
+              { level: "Medium acuity", pct: "~44%", time: "~1.5 hrs", desc: "Fractures, abdominal pain, chest pain", width: "33%" },
+              { level: "Low acuity", pct: "~50%", time: "~45 min", desc: "Minor lacerations, sprains, fever", width: "17%" },
             ].map((a) => (
               <div key={a.level} className="flex items-center gap-3">
                 <div className="w-28 flex-shrink-0">
