@@ -139,12 +139,12 @@ export default function DashboardPage() {
           <GlassCard accent={edGap2035 >= 0 ? "#059669" : "#DC2626"}>
             <p className="text-xs text-[#6B7280] mb-1">ED gap 2035</p>
             <AnimatedCounter value={edGap2035} className="text-xl font-bold text-[#051C2C]" />
-            <div className="mt-1"><RagBadge gap={edGap2035} /></div>
+            <div className="mt-1"><RagBadge gap={edGap2035} demand={edDemand2035} /></div>
           </GlassCard>
           <GlassCard accent={orGap2035 >= 0 ? "#059669" : "#DC2626"}>
             <p className="text-xs text-[#6B7280] mb-1">OR gap 2035</p>
             <AnimatedCounter value={orGap2035} className="text-xl font-bold text-[#051C2C]" />
-            <div className="mt-1"><RagBadge gap={orGap2035} /></div>
+            <div className="mt-1"><RagBadge gap={orGap2035} demand={orDemand2035} /></div>
           </GlassCard>
         </div>
       </div>

@@ -45,7 +45,7 @@ export default function SiteTable({ data, unit }: SiteTableProps) {
                 {row.gap >= 0 ? "+" : ""}{row.gap.toLocaleString()}
               </td>
               <td className="py-2.5 px-3 text-center">
-                <RagBadge gap={row.gap} />
+                <RagBadge gap={row.gap} demand={row.demand2035} />
               </td>
             </tr>
           ))}

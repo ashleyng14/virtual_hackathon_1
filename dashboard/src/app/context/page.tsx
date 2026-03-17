@@ -49,110 +49,43 @@ export default function ContextPage() {
         </div>
       </PageSection>
 
-      {/* Hospital locations map */}
+      {/* Hospital locations overview */}
       <PageSection>
         <h2 className="text-xl font-bold text-[#051C2C] mb-2">Where are the facilities?</h2>
-        <p className="text-sm text-[#6B7280] mb-8">Six emergency departments and five operating room sites across the country (illustrative).</p>
+        <p className="text-sm text-[#6B7280] mb-6">Seven sites across the country — 6 emergency departments and 5 operating room suites (illustrative).</p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Map */}
-          <div className="md:col-span-2 card-subtle p-6 flex items-center justify-center">
-            <svg viewBox="0 0 500 400" className="w-full max-w-lg" xmlns="http://www.w3.org/2000/svg">
-              {/* Coastline shape */}
-              <path d="M80,60 Q120,50 180,55 Q240,45 300,60 Q360,55 400,70 Q430,90 440,130 Q445,170 430,210 Q420,250 390,280 Q350,320 300,340 Q250,355 200,350 Q150,340 120,310 Q90,280 80,240 Q70,200 75,160 Q78,120 80,60Z" fill="#EEF1FF" stroke="#2251FF" strokeWidth="1.5" strokeOpacity="0.4" />
-              {/* Water texture */}
-              <path d="M50,100 Q70,95 90,100" fill="none" stroke="#B3C6FF" strokeWidth="0.5" />
-              <path d="M440,160 Q460,155 480,160" fill="none" stroke="#B3C6FF" strokeWidth="0.5" />
-              <path d="M60,200 Q40,195 20,200" fill="none" stroke="#B3C6FF" strokeWidth="0.5" />
+        <div className="card-subtle p-6 flex items-center justify-center">
+          <svg viewBox="0 0 520 250" className="w-full max-w-2xl" xmlns="http://www.w3.org/2000/svg">
+            {/* UAE-inspired coastline */}
+            <path
+              d="M60,130 L80,110 L110,100 L140,90 L180,80 L220,75 L260,80 L300,85 L340,95 L370,110 L400,120 L430,130 L450,145 L460,165 L455,185 L440,200 L420,210 L390,215 L360,212 L330,208 L300,210 L270,215 L240,218 L210,215 L180,210 L150,200 L120,185 L95,170 L75,155 L60,130Z"
+              fill="#F8F9FB" stroke="#D1D5DB" strokeWidth="1.5"
+            />
+            <path d="M150,130 Q200,120 250,130 Q300,125 350,140" fill="none" stroke="#E5E7EB" strokeWidth="0.5" />
+            <text x="42" y="108" className="text-[8px]" fill="#D1D5DB" textAnchor="middle">Gulf</text>
 
-              {/* Central - largest, downtown */}
-              <circle cx="260" cy="160" r="18" fill="#051C2C" fillOpacity="0.12" stroke="#051C2C" strokeWidth="1.5" />
-              <circle cx="260" cy="160" r="5" fill="#051C2C" />
-              <text x="260" y="190" textAnchor="middle" className="text-[10px] font-semibold" fill="#051C2C">Central</text>
-              <text x="260" y="200" textAnchor="middle" className="text-[9px]" fill="#6B7280">ED + OR</text>
-
-              {/* North */}
-              <circle cx="220" cy="90" r="13" fill="#2251FF" fillOpacity="0.1" stroke="#2251FF" strokeWidth="1.5" />
-              <circle cx="220" cy="90" r="4" fill="#2251FF" />
-              <text x="220" y="115" textAnchor="middle" className="text-[10px] font-semibold" fill="#051C2C">North</text>
-              <text x="220" y="125" textAnchor="middle" className="text-[9px]" fill="#6B7280">ED + OR</text>
-
-              {/* West */}
-              <circle cx="130" cy="180" r="11" fill="#2251FF" fillOpacity="0.1" stroke="#2251FF" strokeWidth="1.5" />
-              <circle cx="130" cy="180" r="4" fill="#2251FF" />
-              <text x="130" y="202" textAnchor="middle" className="text-[10px] font-semibold" fill="#051C2C">West</text>
-              <text x="130" y="212" textAnchor="middle" className="text-[9px]" fill="#6B7280">ED + OR</text>
-
-              {/* Airport */}
-              <circle cx="370" cy="120" r="9" fill="#6B7280" fillOpacity="0.1" stroke="#6B7280" strokeWidth="1.5" />
-              <circle cx="370" cy="120" r="3.5" fill="#6B7280" />
-              <text x="370" y="142" textAnchor="middle" className="text-[10px] font-semibold" fill="#051C2C">Airport</text>
-              <text x="370" y="152" textAnchor="middle" className="text-[9px]" fill="#6B7280">ED only</text>
-
-              {/* Private A */}
-              <circle cx="310" cy="240" r="10" fill="#051C2C" fillOpacity="0.08" stroke="#051C2C" strokeWidth="1" strokeDasharray="3 2" />
-              <circle cx="310" cy="240" r="3.5" fill="#051C2C" />
-              <text x="310" y="262" textAnchor="middle" className="text-[10px] font-semibold" fill="#051C2C">Private A</text>
-              <text x="310" y="272" textAnchor="middle" className="text-[9px]" fill="#6B7280">ED + OR</text>
-
-              {/* Private B */}
-              <circle cx="200" cy="270" r="10" fill="#051C2C" fillOpacity="0.08" stroke="#051C2C" strokeWidth="1" strokeDasharray="3 2" />
-              <circle cx="200" cy="270" r="3.5" fill="#051C2C" />
-              <text x="200" y="292" textAnchor="middle" className="text-[10px] font-semibold" fill="#051C2C">Private B</text>
-              <text x="200" y="302" textAnchor="middle" className="text-[9px]" fill="#6B7280">ED only</text>
-
-              {/* Womens OR (OR only, no ED) */}
-              <circle cx="290" cy="300" r="9" fill="#2251FF" fillOpacity="0.08" stroke="#2251FF" strokeWidth="1" strokeDasharray="3 2" />
-              <circle cx="290" cy="300" r="3" fill="#2251FF" />
-              <text x="290" y="322" textAnchor="middle" className="text-[10px] font-semibold" fill="#051C2C">Women&apos;s</text>
-              <text x="290" y="332" textAnchor="middle" className="text-[9px]" fill="#6B7280">OR only</text>
-            </svg>
-          </div>
-
-          {/* Legend + site list */}
-          <div className="space-y-3">
-            <div className="card-subtle p-4">
-              <p className="text-xs font-semibold text-[#051C2C] mb-3">Emergency departments</p>
-              <div className="space-y-2">
-                {[
-                  { name: "Central ED", visits: "340K", bays: "70 bays (60 staffed)", size: "largest" },
-                  { name: "North ED", visits: "180K", bays: "45 bays (38 staffed)", size: "" },
-                  { name: "West ED", visits: "120K", bays: "32 bays (28 staffed)", size: "" },
-                  { name: "Private ED A", visits: "90K", bays: "22 bays (19 staffed)", size: "" },
-                  { name: "Private ED B", visits: "75K", bays: "20 bays (17 staffed)", size: "" },
-                  { name: "Airport ED", visits: "65K", bays: "18 bays (15 staffed)", size: "" },
-                ].map((s) => (
-                  <div key={s.name} className="flex items-center justify-between text-[11px]">
-                    <span className="font-medium text-[#051C2C]">{s.name}</span>
-                    <span className="text-[#6B7280]">{s.visits} visits/yr</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="card-subtle p-4">
-              <p className="text-xs font-semibold text-[#051C2C] mb-3">Operating room sites</p>
-              <div className="space-y-2">
-                {[
-                  { name: "Central OR", rooms: "22 rooms (19 staffed)" },
-                  { name: "Private OR", rooms: "14 rooms (12 staffed)" },
-                  { name: "North OR", rooms: "10 rooms (9 staffed)" },
-                  { name: "West OR", rooms: "8 rooms (7 staffed)" },
-                  { name: "Women\u2019s OR", rooms: "7 rooms (6 staffed)" },
-                ].map((s) => (
-                  <div key={s.name} className="flex items-center justify-between text-[11px]">
-                    <span className="font-medium text-[#051C2C]">{s.name}</span>
-                    <span className="text-[#6B7280]">{s.rooms}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="text-[10px] text-[#6B7280] px-1">
-              <div className="flex items-center gap-2 mb-1"><div className="w-3 h-3 rounded-full border-2 border-[#051C2C]" /> Public hospital</div>
-              <div className="flex items-center gap-2 mb-1"><div className="w-3 h-3 rounded-full border border-dashed border-[#051C2C]" /> Private hospital</div>
-              <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-full bg-[#051C2C] opacity-10 border border-[#051C2C]" /> Circle size = relative volume</div>
-            </div>
-          </div>
+            {/* Sites — simple dots + labels */}
+            {[
+              { cx: 310, cy: 145, r: 14, label: "Central", sub: "ED + OR" },
+              { cx: 195, cy: 100, r: 10, label: "North", sub: "ED + OR" },
+              { cx: 120, cy: 150, r: 9, label: "West", sub: "ED + OR" },
+              { cx: 410, cy: 140, r: 7, label: "Airport", sub: "ED" },
+              { cx: 350, cy: 190, r: 8, label: "Pvt A", sub: "ED + OR" },
+              { cx: 240, cy: 185, r: 8, label: "Pvt B", sub: "ED" },
+              { cx: 280, cy: 205, r: 7, label: "Women\u2019s", sub: "OR" },
+            ].map((s) => (
+              <g key={s.label}>
+                <circle cx={s.cx} cy={s.cy} r={s.r} fill="#051C2C" fillOpacity="0.07" stroke="#051C2C" strokeWidth="1.5" />
+                <circle cx={s.cx} cy={s.cy} r={3} fill="#051C2C" />
+                <text x={s.cx} y={s.cy + s.r + 12} textAnchor="middle" className="text-[9px] font-medium" fill="#051C2C">{s.label}</text>
+                <text x={s.cx} y={s.cy + s.r + 21} textAnchor="middle" className="text-[7px]" fill="#6B7280">{s.sub}</text>
+              </g>
+            ))}
+          </svg>
         </div>
+        <p className="text-[11px] text-[#6B7280] mt-3 text-center">
+          Explore each site in detail on the <a href="/data" className="text-[#2251FF] underline">data breakdown</a> page.
+        </p>
       </PageSection>
 
       {/* ED flow — box widths proportional to time */}
@@ -327,11 +260,12 @@ export default function ContextPage() {
 
       <PageSection>
         <h2 className="text-xl font-bold text-[#051C2C] mb-6">What this model answers</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
           {[
             { num: "1", title: "Forecast demand", desc: "How many patients will need ED and OR services each year through 2035?" },
-            { num: "2", title: "Assess capacity", desc: "Can current hospitals plus planned expansions handle that volume?" },
-            { num: "3", title: "Close the gap", desc: "Where to expand, when, and by how much?" },
+            { num: "2", title: "Assess capacity", desc: "How many patients can current bays and rooms handle per year?" },
+            { num: "3", title: "Size the gap", desc: "Where is capacity falling short, and by how much?" },
+            { num: "4", title: "Close the gap", desc: "Where to expand, when, and by how much?" },
           ].map((item) => (
             <GlassCard key={item.num}>
               <span className="text-2xl font-bold text-[#E5E7EB]">{item.num}</span>

@@ -6,7 +6,8 @@ import { motion } from "framer-motion";
 const steps = [
   { num: "1", title: "The challenge", desc: "Why hospitals need to plan capacity years ahead.", href: "/context" },
   { num: "2", title: "Our approach", desc: "How we collect data and build the model.", href: "/methodology" },
-  { num: "3", title: "Dashboard", desc: "Explore projections and adjust assumptions live.", href: "/dashboard" },
+  { num: "3", title: "Data breakdown", desc: "Per-bay throughput, site capacity, and expansion plans.", href: "/data" },
+  { num: "4", title: "Dashboard", desc: "Explore projections and adjust assumptions live.", href: "/dashboard" },
 ];
 
 export default function HomePage() {
@@ -31,7 +32,7 @@ export default function HomePage() {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-5 max-w-3xl w-full"
+        className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-4xl w-full"
       >
         {steps.map((s) => (
           <Link key={s.num} href={s.href} className="card p-5 group">
