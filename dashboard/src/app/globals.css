@@ -59,10 +59,10 @@ input[type="range"]::-webkit-slider-thumb {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #051C2C;
+  background: #2251FF;
   cursor: pointer;
   border: 2px solid white;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 4px rgba(34, 81, 255, 0.3);
   transition: transform 0.15s ease;
 }
 
@@ -74,10 +74,10 @@ input[type="range"]::-moz-range-thumb {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #051C2C;
+  background: #2251FF;
   cursor: pointer;
   border: 2px solid white;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 4px rgba(34, 81, 255, 0.3);
 }
 
 @keyframes fadeInUp {

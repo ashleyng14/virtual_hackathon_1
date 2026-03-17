@@ -15,7 +15,7 @@ export default function SegmentedToggle({ options, selected, onChange }: Segment
           onClick={() => onChange(opt.value)}
           className={`px-4 py-1.5 rounded-md text-sm font-medium transition-all cursor-pointer ${
             selected === opt.value
-              ? "bg-white text-[#051C2C] shadow-sm"
+              ? "bg-white text-[#2251FF] shadow-sm"
               : "text-[#6B7280] hover:text-[#111]"
           }`}
         >

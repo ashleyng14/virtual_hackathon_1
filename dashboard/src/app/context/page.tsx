@@ -279,7 +279,7 @@ export default function ContextPage() {
       <PageSection className="text-center pb-24">
         <Link
           href="/methodology"
-          className="inline-block px-6 py-2.5 rounded-lg bg-[#051C2C] text-white text-sm font-medium hover:bg-[#0a2e44] transition-colors"
+          className="inline-block px-6 py-2.5 rounded-lg bg-[#2251FF] text-white text-sm font-medium hover:bg-[#1a42d9] transition-colors"
         >
           See our approach →
         </Link>

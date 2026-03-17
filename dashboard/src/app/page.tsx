@@ -35,8 +35,8 @@ export default function HomePage() {
         className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-4xl w-full"
       >
         {steps.map((s) => (
-          <Link key={s.num} href={s.href} className="card p-5 group">
-            <span className="text-2xl font-bold text-[#E5E7EB]">{s.num}</span>
+          <Link key={s.num} href={s.href} className="card p-5 group border-t-[3px] border-t-[#2251FF]">
+            <span className="text-xs font-bold text-white bg-[#2251FF] w-6 h-6 rounded-full flex items-center justify-center">{s.num}</span>
             <h3 className="text-base font-semibold text-[#051C2C] mt-2">{s.title}</h3>
             <p className="text-sm text-[#6B7280] mt-1">{s.desc}</p>
             <span className="text-sm text-[#2251FF] mt-3 inline-block opacity-0 group-hover:opacity-100 transition-opacity">
