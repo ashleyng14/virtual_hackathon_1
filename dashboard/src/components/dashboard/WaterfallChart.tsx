@@ -26,9 +26,9 @@ function CustomTooltip({ active, payload }: { active?: boolean; payload?: Array<
   if (!active || !payload?.length) return null;
   const d = payload[0].payload;
   return (
-    <div className="glass p-3 !rounded-xl text-xs">
-      <p className="text-[#f0f0f5] font-semibold">{d.label}</p>
-      <p className={d.value >= 0 ? "text-[#3B82F6]" : "text-[#00D1B2]"}>
+    <div className="bg-white border border-[#e9ecef] rounded-lg p-2.5 shadow-sm text-xs">
+      <p className="font-semibold text-[#1a1a2e]">{d.label}</p>
+      <p className={d.value >= 0 ? "text-[#2563eb]" : "text-[#0d9488]"}>
         {d.value >= 0 ? "+" : ""}{d.value.toLocaleString()}
       </p>
     </div>
@@ -53,13 +53,13 @@ export default function WaterfallChart({ data }: WaterfallChartProps) {
   });
 
   return (
-    <div className="w-full h-[300px]">
+    <div className="w-full h-[280px]">
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={chartData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
           <XAxis
             dataKey="label"
-            tick={{ fill: "#6b7280", fontSize: 10 }}
-            axisLine={{ stroke: "rgba(255,255,255,0.1)" }}
+            tick={{ fill: "#9aa0a6", fontSize: 10 }}
+            axisLine={{ stroke: "#e9ecef" }}
             tickLine={false}
             interval={0}
             angle={-20}
@@ -67,7 +67,7 @@ export default function WaterfallChart({ data }: WaterfallChartProps) {
             height={60}
           />
           <YAxis
-            tick={{ fill: "#6b7280", fontSize: 12 }}
+            tick={{ fill: "#9aa0a6", fontSize: 12 }}
             axisLine={false}
             tickLine={false}
             tickFormatter={(v: number) =>
@@ -75,9 +75,9 @@ export default function WaterfallChart({ data }: WaterfallChartProps) {
             }
           />
           <Tooltip content={<CustomTooltip />} />
-          <ReferenceLine y={0} stroke="rgba(255,255,255,0.1)" />
+          <ReferenceLine y={0} stroke="#e9ecef" />
           <Bar dataKey="base" stackId="stack" fill="transparent" />
-          <Bar dataKey="height" stackId="stack" radius={[4, 4, 0, 0]}>
+          <Bar dataKey="height" stackId="stack" radius={[3, 3, 0, 0]}>
             {chartData.map((entry, i) => (
               <Cell
                 key={i}
@@ -88,7 +88,7 @@ export default function WaterfallChart({ data }: WaterfallChartProps) {
                       ? COLORS.waterfall.increase
                       : COLORS.waterfall.decrease
                 }
-                fillOpacity={0.8}
+                fillOpacity={0.75}
               />
             ))}
           </Bar>

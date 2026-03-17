@@ -5,14 +5,14 @@ interface RagBadgeProps {
 
 export default function RagBadge({ gap, thresholds = { amber: 0, red: -10000 } }: RagBadgeProps) {
   const color = gap >= thresholds.amber
-    ? { bg: "rgba(16, 185, 129, 0.15)", text: "#10B981", label: "On Track" }
+    ? { bg: "#ecfdf5", text: "#059669", label: "On track" }
     : gap >= thresholds.red
-      ? { bg: "rgba(245, 158, 11, 0.15)", text: "#F59E0B", label: "At Risk" }
-      : { bg: "rgba(239, 68, 68, 0.15)", text: "#EF4444", label: "Critical" };
+      ? { bg: "#fffbeb", text: "#d97706", label: "At risk" }
+      : { bg: "#fef2f2", text: "#dc2626", label: "Critical" };
 
   return (
     <span
-      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium"
+      className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-medium"
       style={{ backgroundColor: color.bg, color: color.text }}
     >
       <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: color.text }} />

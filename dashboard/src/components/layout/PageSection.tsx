@@ -13,13 +13,13 @@ export default function PageSection({ children, className = "", id }: PageSectio
   return (
     <motion.section
       id={id}
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
-      className={`py-20 px-6 ${className}`}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className={`py-16 px-6 ${className}`}
     >
-      <div className="max-w-6xl mx-auto">{children}</div>
+      <div className="max-w-5xl mx-auto">{children}</div>
     </motion.section>
   );
 }

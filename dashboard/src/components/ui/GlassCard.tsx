@@ -5,26 +5,18 @@ import { type ReactNode } from "react";
 interface GlassCardProps {
   children: ReactNode;
   className?: string;
-  glowColor?: "teal" | "blue" | "rose" | "none";
-  hover?: boolean;
+  accent?: string;
 }
-
-const glowClasses = {
-  teal: "glow-teal",
-  blue: "glow-blue",
-  rose: "glow-rose",
-  none: "",
-};
 
 export default function GlassCard({
   children,
   className = "",
-  glowColor = "none",
-  hover = false,
+  accent,
 }: GlassCardProps) {
   return (
     <div
-      className={`glass ${glowClasses[glowColor]} ${hover ? "glass-hover" : ""} p-6 transition-all duration-300 ${className}`}
+      className={`card p-5 ${className}`}
+      style={accent ? { borderLeft: `3px solid ${accent}` } : undefined}
     >
       {children}
     </div>

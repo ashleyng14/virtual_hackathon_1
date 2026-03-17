@@ -21,18 +21,18 @@ interface DemandCapacityChartProps {
 function CustomTooltip({ active, payload, label }: { active?: boolean; payload?: Array<{ value: number; name: string; color: string }>; label?: string }) {
   if (!active || !payload?.length) return null;
   return (
-    <div className="glass p-4 !rounded-xl text-xs min-w-[180px]">
-      <p className="text-[#f0f0f5] font-semibold mb-2">{label}</p>
+    <div className="bg-white border border-[#e9ecef] rounded-lg p-3 shadow-sm text-xs">
+      <p className="font-semibold text-[#1a1a2e] mb-1.5">{label}</p>
       {payload.map((entry) => (
-        <div key={entry.name} className="flex justify-between gap-4 mb-1">
+        <div key={entry.name} className="flex justify-between gap-6 mb-0.5">
           <span style={{ color: entry.color }}>{entry.name}</span>
-          <span className="text-[#f0f0f5] font-medium">{entry.value?.toLocaleString()}</span>
+          <span className="text-[#1a1a2e] font-medium">{entry.value?.toLocaleString()}</span>
         </div>
       ))}
       {payload.length >= 2 && (
-        <div className="border-t border-[rgba(255,255,255,0.1)] mt-2 pt-2 flex justify-between">
-          <span className="text-[#9ca3af]">Gap</span>
-          <span className={payload[1].value - payload[0].value >= 0 ? "text-[#10B981]" : "text-[#EF4444]"}>
+        <div className="border-t border-[#e9ecef] mt-1.5 pt-1.5 flex justify-between">
+          <span className="text-[#9aa0a6]">Gap</span>
+          <span className={payload[1].value - payload[0].value >= 0 ? "text-[#059669]" : "text-[#dc2626]"}>
             {(payload[1].value - payload[0].value).toLocaleString()}
           </span>
         </div>
@@ -45,28 +45,28 @@ export default function DemandCapacityChart({ data, domain }: DemandCapacityChar
   const crossoverYear = data.find((d) => d.gap < 0)?.year;
 
   return (
-    <div className="w-full h-[400px]">
+    <div className="w-full h-[360px]">
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart data={data} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
           <defs>
             <linearGradient id={`capacityGrad-${domain}`} x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor={COLORS.capacityFill} stopOpacity={0.3} />
+              <stop offset="0%" stopColor={COLORS.capacityFill} stopOpacity={0.15} />
               <stop offset="100%" stopColor={COLORS.capacityFill} stopOpacity={0.02} />
             </linearGradient>
             <linearGradient id={`demandGrad-${domain}`} x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor={COLORS.demandLine} stopOpacity={0.2} />
+              <stop offset="0%" stopColor={COLORS.demandLine} stopOpacity={0.1} />
               <stop offset="100%" stopColor={COLORS.demandLine} stopOpacity={0.02} />
             </linearGradient>
           </defs>
-          <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.04)" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#f1f3f5" />
           <XAxis
             dataKey="year"
-            tick={{ fill: "#6b7280", fontSize: 12 }}
-            axisLine={{ stroke: "rgba(255,255,255,0.1)" }}
+            tick={{ fill: "#9aa0a6", fontSize: 12 }}
+            axisLine={{ stroke: "#e9ecef" }}
             tickLine={false}
           />
           <YAxis
-            tick={{ fill: "#6b7280", fontSize: 12 }}
+            tick={{ fill: "#9aa0a6", fontSize: 12 }}
             axisLine={false}
             tickLine={false}
             tickFormatter={(v: number) =>
