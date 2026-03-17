@@ -8,15 +8,15 @@ interface SegmentedToggleProps {
 
 export default function SegmentedToggle({ options, selected, onChange }: SegmentedToggleProps) {
   return (
-    <div className="inline-flex bg-[#f1f3f5] rounded-lg p-1 gap-0.5">
+    <div className="inline-flex bg-[#F3F4F6] rounded-lg p-1 gap-0.5">
       {options.map((opt) => (
         <button
           key={opt.value}
           onClick={() => onChange(opt.value)}
           className={`px-4 py-1.5 rounded-md text-sm font-medium transition-all cursor-pointer ${
             selected === opt.value
-              ? "bg-white text-[#1a1a2e] shadow-sm"
-              : "text-[#5f6368] hover:text-[#1a1a2e]"
+              ? "bg-white text-[#051C2C] shadow-sm"
+              : "text-[#6B7280] hover:text-[#111]"
           }`}
         >
           {opt.label}

@@ -27,21 +27,21 @@ export default function SiteTable({ data, unit }: SiteTableProps) {
     <div className="overflow-x-auto">
       <table className="w-full text-sm">
         <thead>
-          <tr className="border-b border-[#e9ecef]">
-            <th className="text-left py-2.5 px-3 text-xs font-medium text-[#9aa0a6]">Site</th>
-            <th className="text-right py-2.5 px-3 text-xs font-medium text-[#9aa0a6]">Demand 2035</th>
-            <th className="text-right py-2.5 px-3 text-xs font-medium text-[#9aa0a6]">Capacity 2035</th>
-            <th className="text-right py-2.5 px-3 text-xs font-medium text-[#9aa0a6]">Gap ({unit})</th>
-            <th className="text-center py-2.5 px-3 text-xs font-medium text-[#9aa0a6]">Status</th>
+          <tr className="border-b border-[#E5E7EB]">
+            <th className="text-left py-2.5 px-3 text-xs font-medium text-[#6B7280]">Site</th>
+            <th className="text-right py-2.5 px-3 text-xs font-medium text-[#6B7280]">Demand 2035</th>
+            <th className="text-right py-2.5 px-3 text-xs font-medium text-[#6B7280]">Capacity 2035</th>
+            <th className="text-right py-2.5 px-3 text-xs font-medium text-[#6B7280]">Gap ({unit})</th>
+            <th className="text-center py-2.5 px-3 text-xs font-medium text-[#6B7280]">Status</th>
           </tr>
         </thead>
         <tbody>
           {rows.map((row) => (
-            <tr key={row.site} className="border-b border-[#f1f3f5]">
-              <td className="py-2.5 px-3 font-medium text-[#1a1a2e]">{row.site}</td>
-              <td className="py-2.5 px-3 text-right text-[#5f6368]">{row.demand2035.toLocaleString()}</td>
-              <td className="py-2.5 px-3 text-right text-[#5f6368]">{row.capacity2035.toLocaleString()}</td>
-              <td className={`py-2.5 px-3 text-right font-semibold ${row.gap >= 0 ? "text-[#059669]" : "text-[#dc2626]"}`}>
+            <tr key={row.site} className="border-b border-[#F3F4F6]">
+              <td className="py-2.5 px-3 font-medium text-[#051C2C]">{row.site}</td>
+              <td className="py-2.5 px-3 text-right text-[#374151]">{row.demand2035.toLocaleString()}</td>
+              <td className="py-2.5 px-3 text-right text-[#374151]">{row.capacity2035.toLocaleString()}</td>
+              <td className={`py-2.5 px-3 text-right font-semibold ${row.gap >= 0 ? "text-[#059669]" : "text-[#DC2626]"}`}>
                 {row.gap >= 0 ? "+" : ""}{row.gap.toLocaleString()}
               </td>
               <td className="py-2.5 px-3 text-center">

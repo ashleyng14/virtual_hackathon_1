@@ -13,9 +13,9 @@ interface GapRecommendationsProps {
 }
 
 const urgencyColors = {
-  high: { bg: "#fef2f2", text: "#dc2626", badge: "bg-[#fef2f2] text-[#dc2626]" },
-  medium: { bg: "#fffbeb", text: "#d97706", badge: "bg-[#fffbeb] text-[#d97706]" },
-  low: { bg: "#ecfdf5", text: "#059669", badge: "bg-[#ecfdf5] text-[#059669]" },
+  high: { bg: "#FEF2F2", text: "#DC2626", badge: "bg-[#FEF2F2] text-[#DC2626]" },
+  medium: { bg: "#FFFBEB", text: "#D97706", badge: "bg-[#FFFBEB] text-[#D97706]" },
+  low: { bg: "#ECFDF5", text: "#059669", badge: "bg-[#ECFDF5] text-[#059669]" },
 };
 
 export default function GapRecommendations({ gap2035, recommendations, domain }: GapRecommendationsProps) {
@@ -25,14 +25,14 @@ export default function GapRecommendations({ gap2035, recommendations, domain }:
   return (
     <div
       className="card p-5"
-      style={{ borderLeft: `3px solid ${isDeficit ? "#dc2626" : "#059669"}` }}
+      style={{ borderLeft: `3px solid ${isDeficit ? "#DC2626" : "#059669"}` }}
     >
-      <h3 className="text-sm font-semibold text-[#1a1a2e] mb-1">
+      <h3 className="text-sm font-semibold text-[#051C2C] mb-1">
         {isDeficit
           ? `Projected shortfall: ${Math.abs(gap2035).toLocaleString()} ${unit} by 2035`
           : `Capacity is sufficient through 2035`}
       </h3>
-      <p className="text-xs text-[#9aa0a6] mb-4">{domain} analysis — recommended actions</p>
+      <p className="text-xs text-[#6B7280] mb-4">{domain} analysis — recommended actions</p>
 
       <div className="space-y-2.5">
         {recommendations.map((rec) => {
@@ -43,9 +43,9 @@ export default function GapRecommendations({ gap2035, recommendations, domain }:
                 <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded ${c.badge}`}>
                   {rec.urgency}
                 </span>
-                <span className="text-xs font-medium text-[#1a1a2e]">{rec.timeframe}</span>
+                <span className="text-xs font-medium text-[#051C2C]">{rec.timeframe}</span>
               </div>
-              <p className="text-xs text-[#5f6368]">{rec.action}</p>
+              <p className="text-xs text-[#374151]">{rec.action}</p>
             </div>
           );
         })}

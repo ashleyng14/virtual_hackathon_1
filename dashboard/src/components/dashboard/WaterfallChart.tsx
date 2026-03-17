@@ -26,9 +26,9 @@ function CustomTooltip({ active, payload }: { active?: boolean; payload?: Array<
   if (!active || !payload?.length) return null;
   const d = payload[0].payload;
   return (
-    <div className="bg-white border border-[#e9ecef] rounded-lg p-2.5 shadow-sm text-xs">
-      <p className="font-semibold text-[#1a1a2e]">{d.label}</p>
-      <p className={d.value >= 0 ? "text-[#2563eb]" : "text-[#0d9488]"}>
+    <div className="bg-white border border-[#E5E7EB] rounded-lg p-2.5 shadow-sm text-xs">
+      <p className="font-semibold text-[#051C2C]">{d.label}</p>
+      <p className={d.value >= 0 ? "text-[#051C2C]" : "text-[#00A9F4]"}>
         {d.value >= 0 ? "+" : ""}{d.value.toLocaleString()}
       </p>
     </div>
@@ -58,8 +58,8 @@ export default function WaterfallChart({ data }: WaterfallChartProps) {
         <BarChart data={chartData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
           <XAxis
             dataKey="label"
-            tick={{ fill: "#9aa0a6", fontSize: 10 }}
-            axisLine={{ stroke: "#e9ecef" }}
+            tick={{ fill: "#6B7280", fontSize: 10 }}
+            axisLine={{ stroke: "#E5E7EB" }}
             tickLine={false}
             interval={0}
             angle={-20}
@@ -67,7 +67,7 @@ export default function WaterfallChart({ data }: WaterfallChartProps) {
             height={60}
           />
           <YAxis
-            tick={{ fill: "#9aa0a6", fontSize: 12 }}
+            tick={{ fill: "#6B7280", fontSize: 12 }}
             axisLine={false}
             tickLine={false}
             tickFormatter={(v: number) =>
@@ -75,7 +75,7 @@ export default function WaterfallChart({ data }: WaterfallChartProps) {
             }
           />
           <Tooltip content={<CustomTooltip />} />
-          <ReferenceLine y={0} stroke="#e9ecef" />
+          <ReferenceLine y={0} stroke="#E5E7EB" />
           <Bar dataKey="base" stackId="stack" fill="transparent" />
           <Bar dataKey="height" stackId="stack" radius={[3, 3, 0, 0]}>
             {chartData.map((entry, i) => (
@@ -88,7 +88,7 @@ export default function WaterfallChart({ data }: WaterfallChartProps) {
                       ? COLORS.waterfall.increase
                       : COLORS.waterfall.decrease
                 }
-                fillOpacity={0.75}
+                fillOpacity={0.8}
               />
             ))}
           </Bar>

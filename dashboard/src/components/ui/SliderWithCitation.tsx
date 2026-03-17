@@ -37,15 +37,15 @@ export default function SliderWithCitation({
     <div className="mb-4">
       <div className="flex items-center justify-between mb-1.5">
         <div className="flex items-center gap-1.5">
-          <span className="text-xs text-[#5f6368]">{label}</span>
+          <span className="text-xs text-[#374151]">{label}</span>
           <button
             onClick={() => setShowCitation(!showCitation)}
-            className="w-3.5 h-3.5 rounded-full border border-[#d0d5dd] text-[9px] text-[#9aa0a6] hover:text-[#0d9488] hover:border-[#0d9488] transition-colors flex items-center justify-center cursor-pointer"
+            className="w-3.5 h-3.5 rounded-full border border-[#D1D5DB] text-[9px] text-[#6B7280] hover:text-[#051C2C] hover:border-[#051C2C] transition-colors flex items-center justify-center cursor-pointer"
           >
             i
           </button>
         </div>
-        <span className="text-xs font-semibold text-[#1a1a2e]">{displayValue}</span>
+        <span className="text-xs font-semibold text-[#111]">{displayValue}</span>
       </div>
       <input
         type="range"
@@ -57,10 +57,10 @@ export default function SliderWithCitation({
         className="w-full"
       />
       {showCitation && (
-        <div className="mt-1.5 p-2.5 card-subtle text-[11px] text-[#5f6368] space-y-1">
-          <p className="font-medium text-[#1a1a2e]">Source</p>
+        <div className="mt-1.5 p-2.5 card-subtle text-[11px] text-[#374151] space-y-1">
+          <p className="font-medium text-[#111]">Source</p>
           <p>{citation}</p>
-          <div className="flex gap-3 mt-1 text-[10px] text-[#9aa0a6]">
+          <div className="flex gap-3 mt-1 text-[10px] text-[#6B7280]">
             <span>Base: {unit === "%" ? `${(scenarioValues.base * 100).toFixed(1)}%` : `${scenarioValues.base}${unit}`}</span>
             <span>Best: {unit === "%" ? `${(scenarioValues.best * 100).toFixed(1)}%` : `${scenarioValues.best}${unit}`}</span>
             <span>Surge: {unit === "%" ? `${(scenarioValues.surge * 100).toFixed(1)}%` : `${scenarioValues.surge}${unit}`}</span>

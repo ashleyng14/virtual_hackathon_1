@@ -18,11 +18,11 @@ export default function HomePage() {
         transition={{ duration: 0.6 }}
         className="text-center max-w-2xl"
       >
-        <p className="text-sm font-medium text-[#0d9488] mb-3">Workstream 2B</p>
-        <h1 className="text-4xl md:text-5xl font-bold text-[#1a1a2e] tracking-tight leading-tight">
+        <p className="text-sm font-medium text-[#00A9F4] mb-3">Workstream 2B</p>
+        <h1 className="text-4xl md:text-5xl font-bold text-[#051C2C] tracking-tight leading-tight">
           Healthcare capacity model
         </h1>
-        <p className="mt-4 text-lg text-[#5f6368] leading-relaxed">
+        <p className="mt-4 text-lg text-[#6B7280] leading-relaxed">
           Projecting demand and capacity for emergency departments and operating rooms through 2035.
         </p>
       </motion.div>
@@ -35,10 +35,10 @@ export default function HomePage() {
       >
         {steps.map((s) => (
           <Link key={s.num} href={s.href} className="card p-5 group">
-            <span className="text-2xl font-bold text-[#e9ecef]">{s.num}</span>
-            <h3 className="text-base font-semibold text-[#1a1a2e] mt-2">{s.title}</h3>
-            <p className="text-sm text-[#5f6368] mt-1">{s.desc}</p>
-            <span className="text-sm text-[#0d9488] mt-3 inline-block opacity-0 group-hover:opacity-100 transition-opacity">
+            <span className="text-2xl font-bold text-[#E5E7EB]">{s.num}</span>
+            <h3 className="text-base font-semibold text-[#051C2C] mt-2">{s.title}</h3>
+            <p className="text-sm text-[#6B7280] mt-1">{s.desc}</p>
+            <span className="text-sm text-[#00A9F4] mt-3 inline-block opacity-0 group-hover:opacity-100 transition-opacity">
               View &rarr;
             </span>
           </Link>

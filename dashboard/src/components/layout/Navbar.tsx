@@ -8,15 +8,15 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-[#e9ecef]">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-[#E5E7EB]">
       <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5">
-          <div className="w-7 h-7 rounded-lg bg-[#0d9488] flex items-center justify-center">
+          <div className="w-7 h-7 rounded-lg bg-[#051C2C] flex items-center justify-center">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
             </svg>
           </div>
-          <span className="text-sm font-semibold text-[#1a1a2e]">
+          <span className="text-sm font-semibold text-[#111]">
             Healthcare capacity model
           </span>
         </Link>
@@ -30,8 +30,8 @@ export default function Navbar() {
                 href={item.href}
                 className={`px-3 py-1.5 rounded-md text-sm transition-colors ${
                   isActive
-                    ? "text-[#0d9488] font-medium bg-[#f0fdfa]"
-                    : "text-[#5f6368] hover:text-[#1a1a2e] hover:bg-[#f8f9fa]"
+                    ? "text-[#051C2C] font-medium bg-[#F3F4F6]"
+                    : "text-[#6B7280] hover:text-[#111] hover:bg-[#F9FAFB]"
                 }`}
               >
                 {item.label}

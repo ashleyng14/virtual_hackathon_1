@@ -5,10 +5,10 @@ interface RagBadgeProps {
 
 export default function RagBadge({ gap, thresholds = { amber: 0, red: -10000 } }: RagBadgeProps) {
   const color = gap >= thresholds.amber
-    ? { bg: "#ecfdf5", text: "#059669", label: "On track" }
+    ? { bg: "#ECFDF5", text: "#059669", label: "On track" }
     : gap >= thresholds.red
-      ? { bg: "#fffbeb", text: "#d97706", label: "At risk" }
-      : { bg: "#fef2f2", text: "#dc2626", label: "Critical" };
+      ? { bg: "#FFFBEB", text: "#D97706", label: "At risk" }
+      : { bg: "#FEF2F2", text: "#DC2626", label: "Critical" };
 
   return (
     <span
