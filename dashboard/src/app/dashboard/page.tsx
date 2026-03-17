@@ -111,7 +111,7 @@ export default function DashboardPage() {
   return (
     <div className="min-h-screen pb-16">
       {/* Header */}
-      <div className="max-w-6xl mx-auto px-6 pt-20 pb-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-20 pb-6">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
           <div>
             <h1 className="text-2xl font-bold text-[#051C2C]">Demand &amp; capacity projections</h1>
@@ -126,31 +126,31 @@ export default function DashboardPage() {
       </div>
 
       {/* KPIs */}
-      <div className="max-w-6xl mx-auto px-6 mb-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
           <GlassCard>
             <p className="text-xs text-[#6B7280] mb-1">ED demand 2035</p>
-            <AnimatedCounter value={edDemand2035} className="text-xl font-bold text-[#051C2C]" />
+            <AnimatedCounter value={edDemand2035} className="text-lg sm:text-xl font-bold text-[#051C2C]" />
           </GlassCard>
           <GlassCard>
             <p className="text-xs text-[#6B7280] mb-1">OR demand 2035</p>
-            <AnimatedCounter value={orDemand2035} className="text-xl font-bold text-[#051C2C]" />
+            <AnimatedCounter value={orDemand2035} className="text-lg sm:text-xl font-bold text-[#051C2C]" />
           </GlassCard>
           <GlassCard accent={edGap2035 >= 0 ? "#059669" : "#DC2626"}>
             <p className="text-xs text-[#6B7280] mb-1">ED gap 2035</p>
-            <AnimatedCounter value={edGap2035} className="text-xl font-bold text-[#051C2C]" />
+            <AnimatedCounter value={edGap2035} className="text-lg sm:text-xl font-bold text-[#051C2C]" />
             <div className="mt-1"><RagBadge gap={edGap2035} demand={edDemand2035} /></div>
           </GlassCard>
           <GlassCard accent={orGap2035 >= 0 ? "#059669" : "#DC2626"}>
             <p className="text-xs text-[#6B7280] mb-1">OR gap 2035</p>
-            <AnimatedCounter value={orGap2035} className="text-xl font-bold text-[#051C2C]" />
+            <AnimatedCounter value={orGap2035} className="text-lg sm:text-xl font-bold text-[#051C2C]" />
             <div className="mt-1"><RagBadge gap={orGap2035} demand={orDemand2035} /></div>
           </GlassCard>
         </div>
       </div>
 
       {/* Tabs */}
-      <div className="max-w-6xl mx-auto px-6 mb-5">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-5">
         <SegmentedToggle
           options={[
             { value: "ed", label: "Emergency department" },
@@ -162,7 +162,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Main content */}
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col lg:flex-row gap-5">
           {/* Charts */}
           <div className="flex-1 space-y-5">
@@ -192,7 +192,7 @@ export default function DashboardPage() {
 
           {/* Controls */}
           <div className="w-full lg:w-72 flex-shrink-0">
-            <div className="card p-5 sticky top-20">
+            <div className="card p-4 sm:p-5 lg:sticky lg:top-20">
               <h3 className="text-sm font-semibold text-[#051C2C] mb-1">Assumptions</h3>
               <p className="text-[11px] text-[#6B7280] mb-5">
                 Adjust parameters. Click &#x24D8; for sources.

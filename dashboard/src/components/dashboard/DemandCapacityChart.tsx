@@ -53,7 +53,7 @@ export default function DemandCapacityChart({ data, domain }: DemandCapacityChar
 
   return (
     <div>
-      <div className="w-full h-[360px]">
+      <div className="w-full h-[280px] sm:h-[320px] lg:h-[360px]">
         <ResponsiveContainer width="100%" height="100%">
           <ComposedChart data={data} margin={{ top: 20, right: 10, left: 0, bottom: 0 }}>
             <defs>
@@ -134,7 +134,7 @@ export default function DemandCapacityChart({ data, domain }: DemandCapacityChar
       </div>
 
       {hasExpansion && (
-        <div className="flex items-center gap-4 mt-3 px-1 text-[11px]">
+        <div className="flex flex-wrap items-center gap-3 sm:gap-4 mt-3 px-1 text-[10px] sm:text-[11px]">
           <div className="flex items-center gap-1.5">
             <div className="w-4 h-0.5 bg-[#2251FF]" />
             <span className="text-[#374151]">Capacity</span>

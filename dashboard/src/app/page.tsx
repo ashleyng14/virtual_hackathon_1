@@ -12,7 +12,7 @@ const steps = [
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-6">
+    <div className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -20,10 +20,10 @@ export default function HomePage() {
         className="text-center max-w-2xl"
       >
         <p className="text-sm font-medium text-[#2251FF] mb-3">Workstream 2B</p>
-        <h1 className="text-4xl md:text-5xl font-bold text-[#051C2C] tracking-tight leading-tight">
+        <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-[#051C2C] tracking-tight leading-tight">
           Healthcare capacity model
         </h1>
-        <p className="mt-4 text-lg text-[#6B7280] leading-relaxed">
+        <p className="mt-4 text-base sm:text-lg text-[#6B7280] leading-relaxed">
           Projecting demand and capacity for emergency departments and operating rooms through 2035.
         </p>
       </motion.div>

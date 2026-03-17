@@ -53,7 +53,7 @@ export default function WaterfallChart({ data }: WaterfallChartProps) {
   });
 
   return (
-    <div className="w-full h-[280px]">
+    <div className="w-full h-[240px] sm:h-[280px]">
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={chartData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
           <XAxis

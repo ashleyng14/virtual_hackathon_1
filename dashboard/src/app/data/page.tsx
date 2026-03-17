@@ -129,7 +129,7 @@ export default function DataPage() {
     <div>
       <PageSection className="pt-24 text-center">
         <p className="text-sm font-medium text-[#2251FF] mb-3">Data breakdown</p>
-        <h1 className="text-3xl md:text-4xl font-bold text-[#051C2C] max-w-2xl mx-auto leading-tight">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#051C2C] max-w-2xl mx-auto leading-tight">
           From bays and rooms to patient capacity
         </h1>
         <p className="mt-4 text-base text-[#6B7280] max-w-xl mx-auto">
@@ -144,8 +144,8 @@ export default function DataPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
           {/* Map — UAE outline */}
-          <div className="lg:col-span-3 card-subtle p-4">
-            <svg viewBox="0 0 520 280" className="w-full" xmlns="http://www.w3.org/2000/svg">
+          <div className="lg:col-span-3 card-subtle p-3 sm:p-4 overflow-hidden min-w-0">
+            <svg viewBox="0 0 520 280" className="w-full" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
               {/* UAE-inspired coastline (simplified, no label) */}
               <path
                 d="M60,130 L80,110 L110,100 L140,90 L180,80 L220,75 L260,80 L300,85 L340,95 L370,110 L400,120 L430,130 L450,145 L460,165 L455,185 L440,200 L420,210 L390,215 L360,212 L330,208 L300,210 L270,215 L240,218 L210,215 L180,210 L150,200 L120,185 L95,170 L75,155 L60,130Z"
@@ -371,7 +371,7 @@ export default function DataPage() {
               <span className="text-[#6B7280]">÷</span>
               <span className="px-2 py-1 rounded bg-[#F3F4F6]">{edWeightedTreat.toFixed(2)}h treat</span>
             </div>
-            <p className="text-3xl font-bold text-[#051C2C]">~{edPatientsPerBay(0.75).toLocaleString()}</p>
+            <p className="text-2xl sm:text-3xl font-bold text-[#051C2C]">~{edPatientsPerBay(0.75).toLocaleString()}</p>
             <p className="text-sm text-[#6B7280] mt-1">patients per bay per year</p>
             <div className="mt-4 space-y-1.5 text-xs text-[#374151]">
               <div className="flex justify-between"><span>Operates</span><span className="font-medium">24/7, 365 days</span></div>
@@ -425,7 +425,7 @@ export default function DataPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <p className="text-xs font-semibold text-[#051C2C] mb-4">ED — effective bays added over time</p>
-            <div className="h-[260px]">
+            <div className="h-[220px] sm:h-[260px]">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={edRamp.data} margin={{ top: 5, right: 5, left: -15, bottom: 0 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#F3F4F6" />
@@ -442,7 +442,7 @@ export default function DataPage() {
           </div>
           <div>
             <p className="text-xs font-semibold text-[#051C2C] mb-4">OR — effective rooms added over time</p>
-            <div className="h-[260px]">
+            <div className="h-[220px] sm:h-[260px]">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={orRamp.data} margin={{ top: 5, right: 5, left: -15, bottom: 0 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#F3F4F6" />
@@ -466,7 +466,7 @@ export default function DataPage() {
         <p className="text-sm text-[#6B7280] mb-6">
           The gap is expressed as a percentage of projected demand. Thresholds are based on international healthcare planning benchmarks.
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
           {[
             { label: "On track", pct: "≥ 0%", color: "#059669", bg: "#ECFDF5", desc: "Capacity meets or exceeds demand" },
             { label: "Moderate gap", pct: "0% to −15%", color: "#D97706", bg: "#FFFBEB", desc: "Manageable with operational levers (staffing, scheduling)" },

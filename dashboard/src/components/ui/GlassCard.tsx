@@ -15,7 +15,7 @@ export default function GlassCard({
 }: GlassCardProps) {
   return (
     <div
-      className={`card p-5 ${className}`}
+      className={`card p-4 sm:p-5 ${className}`}
       style={accent ? { borderLeft: `3px solid ${accent}` } : undefined}
     >
       {children}

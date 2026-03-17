@@ -17,7 +17,7 @@ export default function PageSection({ children, className = "", id }: PageSectio
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`py-16 px-6 ${className}`}
+      className={`py-10 px-4 sm:py-16 sm:px-6 ${className}`}
     >
       <div className="max-w-5xl mx-auto">{children}</div>
     </motion.section>

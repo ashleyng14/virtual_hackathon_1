@@ -9,7 +9,7 @@ export default function ContextPage() {
     <div>
       <PageSection className="pt-24 text-center">
         <p className="text-sm font-medium text-[#2251FF] mb-3">The challenge</p>
-        <h1 className="text-3xl md:text-4xl font-bold text-[#051C2C] max-w-2xl mx-auto leading-tight">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#051C2C] max-w-2xl mx-auto leading-tight">
           Planning capacity so no patient waits too long
         </h1>
         <p className="mt-4 text-base text-[#6B7280] max-w-xl mx-auto">
@@ -93,25 +93,28 @@ export default function ContextPage() {
         <h2 className="text-xl font-bold text-[#051C2C] mb-2">How an emergency department works</h2>
         <p className="text-sm text-[#6B7280] mb-8">Each step takes a different amount of time. The box width below reflects that.</p>
 
-        <div className="flex items-center gap-2 mb-6">
-          <div className="p-3 rounded-lg bg-[#EBF8FF] border border-[#B3C6FF] text-center" style={{ flex: 1 }}>
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 mb-6">
+          <div className="p-3 rounded-lg bg-[#EBF8FF] border border-[#B3C6FF] text-center sm:flex-[1]">
             <p className="text-xs font-semibold text-[#051C2C]">Arrival</p>
-            <p className="text-[10px] text-[#6B7280] mt-0.5">Walk-in or ambulance</p>
+            <p className="text-[11px] text-[#6B7280] mt-0.5">Walk-in or ambulance</p>
           </div>
-          <span className="text-[#2251FF] text-sm flex-shrink-0">→</span>
-          <div className="p-3 rounded-lg bg-[#EBF8FF] border border-[#B3C6FF] text-center" style={{ flex: 2 }}>
+          <span className="text-[#2251FF] text-sm flex-shrink-0 text-center hidden sm:block">→</span>
+          <span className="text-[#2251FF] text-sm flex-shrink-0 text-center sm:hidden">↓</span>
+          <div className="p-3 rounded-lg bg-[#EBF8FF] border border-[#B3C6FF] text-center sm:flex-[2]">
             <p className="text-xs font-semibold text-[#051C2C]">Triage</p>
-            <p className="text-[10px] text-[#6B7280] mt-0.5">~15 – 30 min</p>
+            <p className="text-[11px] text-[#6B7280] mt-0.5">~15 – 30 min</p>
           </div>
-          <span className="text-[#2251FF] text-sm flex-shrink-0">→</span>
-          <div className="p-3 rounded-lg bg-[#051C2C] text-center" style={{ flex: 8 }}>
+          <span className="text-[#2251FF] text-sm flex-shrink-0 text-center hidden sm:block">→</span>
+          <span className="text-[#2251FF] text-sm flex-shrink-0 text-center sm:hidden">↓</span>
+          <div className="p-3 rounded-lg bg-[#051C2C] text-center sm:flex-[8]">
             <p className="text-xs font-semibold text-white">Treatment bay</p>
-            <p className="text-[10px] text-[#B3C6FF] mt-0.5">45 min – 4.5 hrs depending on acuity</p>
+            <p className="text-[11px] text-[#B3C6FF] mt-0.5">45 min – 4.5 hrs depending on acuity</p>
           </div>
-          <span className="text-[#2251FF] text-sm flex-shrink-0">→</span>
-          <div className="p-3 rounded-lg bg-[#EBF8FF] border border-[#B3C6FF] text-center" style={{ flex: 2 }}>
+          <span className="text-[#2251FF] text-sm flex-shrink-0 text-center hidden sm:block">→</span>
+          <span className="text-[#2251FF] text-sm flex-shrink-0 text-center sm:hidden">↓</span>
+          <div className="p-3 rounded-lg bg-[#EBF8FF] border border-[#B3C6FF] text-center sm:flex-[2]">
             <p className="text-xs font-semibold text-[#051C2C]">Discharge or admit</p>
-            <p className="text-[10px] text-[#6B7280] mt-0.5">~20 – 30 min</p>
+            <p className="text-[11px] text-[#6B7280] mt-0.5">~20 – 30 min</p>
           </div>
         </div>
 
@@ -147,20 +150,22 @@ export default function ContextPage() {
         <h2 className="text-xl font-bold text-[#051C2C] mb-2">How an operating room works</h2>
         <p className="text-sm text-[#6B7280] mb-8">Each OR typically runs 2 sessions/day. Surgery is the longest phase by far.</p>
 
-        <div className="flex items-center gap-2 mb-6">
-          <div className="p-3 rounded-lg bg-[#EBF8FF] border border-[#B3C6FF] text-center" style={{ flex: 2 }}>
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 mb-6">
+          <div className="p-3 rounded-lg bg-[#EBF8FF] border border-[#B3C6FF] text-center sm:flex-[2]">
             <p className="text-xs font-semibold text-[#051C2C]">Pre-op</p>
-            <p className="text-[10px] text-[#6B7280] mt-0.5">~30 – 45 min</p>
+            <p className="text-[11px] text-[#6B7280] mt-0.5">~30 – 45 min</p>
           </div>
-          <span className="text-[#2251FF] text-sm flex-shrink-0">→</span>
-          <div className="p-3 rounded-lg bg-[#051C2C] text-center" style={{ flex: 8 }}>
+          <span className="text-[#2251FF] text-sm flex-shrink-0 text-center hidden sm:block">→</span>
+          <span className="text-[#2251FF] text-sm flex-shrink-0 text-center sm:hidden">↓</span>
+          <div className="p-3 rounded-lg bg-[#051C2C] text-center sm:flex-[8]">
             <p className="text-xs font-semibold text-white">Surgery</p>
-            <p className="text-[10px] text-[#B3C6FF] mt-0.5">50 – 190 min depending on specialty</p>
+            <p className="text-[11px] text-[#B3C6FF] mt-0.5">50 – 190 min depending on specialty</p>
           </div>
-          <span className="text-[#2251FF] text-sm flex-shrink-0">→</span>
-          <div className="p-3 rounded-lg bg-[#EBF8FF] border border-[#B3C6FF] text-center" style={{ flex: 2 }}>
+          <span className="text-[#2251FF] text-sm flex-shrink-0 text-center hidden sm:block">→</span>
+          <span className="text-[#2251FF] text-sm flex-shrink-0 text-center sm:hidden">↓</span>
+          <div className="p-3 rounded-lg bg-[#EBF8FF] border border-[#B3C6FF] text-center sm:flex-[2]">
             <p className="text-xs font-semibold text-[#051C2C]">Turnover</p>
-            <p className="text-[10px] text-[#6B7280] mt-0.5">~25 – 40 min</p>
+            <p className="text-[11px] text-[#6B7280] mt-0.5">~25 – 40 min</p>
           </div>
         </div>
 
@@ -260,7 +265,7 @@ export default function ContextPage() {
 
       <PageSection>
         <h2 className="text-xl font-bold text-[#051C2C] mb-6">What this model answers</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
           {[
             { num: "1", title: "Forecast demand", desc: "How many patients will need ED and OR services each year through 2035?" },
             { num: "2", title: "Assess capacity", desc: "How many patients can current bays and rooms handle per year?" },

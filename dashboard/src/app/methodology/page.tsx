@@ -114,7 +114,7 @@ export default function MethodologyPage() {
     <div>
       <PageSection className="pt-24 text-center">
         <p className="text-sm font-medium text-[#2251FF] mb-3">Our approach</p>
-        <h1 className="text-3xl md:text-4xl font-bold text-[#051C2C] max-w-2xl mx-auto leading-tight">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#051C2C] max-w-2xl mx-auto leading-tight">
           From data collection to decisions
         </h1>
         <p className="mt-4 text-base text-[#6B7280] max-w-xl mx-auto">
@@ -158,7 +158,7 @@ export default function MethodologyPage() {
       <PageSection>
         <h2 className="text-xl font-bold text-[#051C2C] mb-6">How inputs become outputs</h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
           {inputs.map((box) => (
             <div key={box.label} className="card-subtle p-4 border-t-[3px] border-t-[#2251FF]">
               <div className="w-8 h-8 rounded-lg bg-[#EEF1FF] text-[#2251FF] flex items-center justify-center mb-2.5">

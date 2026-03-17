@@ -24,8 +24,8 @@ export default function SiteTable({ data, unit }: SiteTableProps) {
   });
 
   return (
-    <div className="overflow-x-auto">
-      <table className="w-full text-sm">
+    <div className="overflow-x-auto -mx-1">
+      <table className="w-full text-sm min-w-[520px]">
         <thead>
           <tr className="border-b border-[#E5E7EB]">
             <th className="text-left py-2.5 px-3 text-xs font-medium text-[#6B7280]">Site</th>
