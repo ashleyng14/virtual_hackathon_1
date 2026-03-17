@@ -8,7 +8,7 @@ export default function ContextPage() {
   return (
     <div>
       <PageSection className="pt-24 text-center">
-        <p className="text-sm font-medium text-[#00A9F4] mb-3">The challenge</p>
+        <p className="text-sm font-medium text-[#2251FF] mb-3">The challenge</p>
         <h1 className="text-3xl md:text-4xl font-bold text-[#051C2C] max-w-2xl mx-auto leading-tight">
           Planning capacity so no patient waits too long
         </h1>
@@ -59,11 +59,11 @@ export default function ContextPage() {
           <div className="md:col-span-2 card-subtle p-6 flex items-center justify-center">
             <svg viewBox="0 0 500 400" className="w-full max-w-lg" xmlns="http://www.w3.org/2000/svg">
               {/* Coastline shape */}
-              <path d="M80,60 Q120,50 180,55 Q240,45 300,60 Q360,55 400,70 Q430,90 440,130 Q445,170 430,210 Q420,250 390,280 Q350,320 300,340 Q250,355 200,350 Q150,340 120,310 Q90,280 80,240 Q70,200 75,160 Q78,120 80,60Z" fill="#F0F9FF" stroke="#00A9F4" strokeWidth="1.5" strokeOpacity="0.4" />
+              <path d="M80,60 Q120,50 180,55 Q240,45 300,60 Q360,55 400,70 Q430,90 440,130 Q445,170 430,210 Q420,250 390,280 Q350,320 300,340 Q250,355 200,350 Q150,340 120,310 Q90,280 80,240 Q70,200 75,160 Q78,120 80,60Z" fill="#EEF1FF" stroke="#2251FF" strokeWidth="1.5" strokeOpacity="0.4" />
               {/* Water texture */}
-              <path d="M50,100 Q70,95 90,100" fill="none" stroke="#B3E5FC" strokeWidth="0.5" />
-              <path d="M440,160 Q460,155 480,160" fill="none" stroke="#B3E5FC" strokeWidth="0.5" />
-              <path d="M60,200 Q40,195 20,200" fill="none" stroke="#B3E5FC" strokeWidth="0.5" />
+              <path d="M50,100 Q70,95 90,100" fill="none" stroke="#B3C6FF" strokeWidth="0.5" />
+              <path d="M440,160 Q460,155 480,160" fill="none" stroke="#B3C6FF" strokeWidth="0.5" />
+              <path d="M60,200 Q40,195 20,200" fill="none" stroke="#B3C6FF" strokeWidth="0.5" />
 
               {/* Central - largest, downtown */}
               <circle cx="260" cy="160" r="18" fill="#051C2C" fillOpacity="0.12" stroke="#051C2C" strokeWidth="1.5" />
@@ -72,14 +72,14 @@ export default function ContextPage() {
               <text x="260" y="200" textAnchor="middle" className="text-[9px]" fill="#6B7280">ED + OR</text>
 
               {/* North */}
-              <circle cx="220" cy="90" r="13" fill="#00A9F4" fillOpacity="0.1" stroke="#00A9F4" strokeWidth="1.5" />
-              <circle cx="220" cy="90" r="4" fill="#00A9F4" />
+              <circle cx="220" cy="90" r="13" fill="#2251FF" fillOpacity="0.1" stroke="#2251FF" strokeWidth="1.5" />
+              <circle cx="220" cy="90" r="4" fill="#2251FF" />
               <text x="220" y="115" textAnchor="middle" className="text-[10px] font-semibold" fill="#051C2C">North</text>
               <text x="220" y="125" textAnchor="middle" className="text-[9px]" fill="#6B7280">ED + OR</text>
 
               {/* West */}
-              <circle cx="130" cy="180" r="11" fill="#00A9F4" fillOpacity="0.1" stroke="#00A9F4" strokeWidth="1.5" />
-              <circle cx="130" cy="180" r="4" fill="#00A9F4" />
+              <circle cx="130" cy="180" r="11" fill="#2251FF" fillOpacity="0.1" stroke="#2251FF" strokeWidth="1.5" />
+              <circle cx="130" cy="180" r="4" fill="#2251FF" />
               <text x="130" y="202" textAnchor="middle" className="text-[10px] font-semibold" fill="#051C2C">West</text>
               <text x="130" y="212" textAnchor="middle" className="text-[9px]" fill="#6B7280">ED + OR</text>
 
@@ -102,8 +102,8 @@ export default function ContextPage() {
               <text x="200" y="302" textAnchor="middle" className="text-[9px]" fill="#6B7280">ED only</text>
 
               {/* Womens OR (OR only, no ED) */}
-              <circle cx="290" cy="300" r="9" fill="#00A9F4" fillOpacity="0.08" stroke="#00A9F4" strokeWidth="1" strokeDasharray="3 2" />
-              <circle cx="290" cy="300" r="3" fill="#00A9F4" />
+              <circle cx="290" cy="300" r="9" fill="#2251FF" fillOpacity="0.08" stroke="#2251FF" strokeWidth="1" strokeDasharray="3 2" />
+              <circle cx="290" cy="300" r="3" fill="#2251FF" />
               <text x="290" y="322" textAnchor="middle" className="text-[10px] font-semibold" fill="#051C2C">Women&apos;s</text>
               <text x="290" y="332" textAnchor="middle" className="text-[9px]" fill="#6B7280">OR only</text>
             </svg>
@@ -161,22 +161,22 @@ export default function ContextPage() {
         <p className="text-sm text-[#6B7280] mb-8">Each step takes a different amount of time. The box width below reflects that.</p>
 
         <div className="flex items-center gap-2 mb-6">
-          <div className="p-3 rounded-lg bg-[#EBF8FF] border border-[#B3E5FC] text-center" style={{ flex: 1 }}>
+          <div className="p-3 rounded-lg bg-[#EBF8FF] border border-[#B3C6FF] text-center" style={{ flex: 1 }}>
             <p className="text-xs font-semibold text-[#051C2C]">Arrival</p>
             <p className="text-[10px] text-[#6B7280] mt-0.5">Walk-in or ambulance</p>
           </div>
-          <span className="text-[#00A9F4] text-sm flex-shrink-0">→</span>
-          <div className="p-3 rounded-lg bg-[#EBF8FF] border border-[#B3E5FC] text-center" style={{ flex: 2 }}>
+          <span className="text-[#2251FF] text-sm flex-shrink-0">→</span>
+          <div className="p-3 rounded-lg bg-[#EBF8FF] border border-[#B3C6FF] text-center" style={{ flex: 2 }}>
             <p className="text-xs font-semibold text-[#051C2C]">Triage</p>
             <p className="text-[10px] text-[#6B7280] mt-0.5">~15 – 30 min</p>
           </div>
-          <span className="text-[#00A9F4] text-sm flex-shrink-0">→</span>
+          <span className="text-[#2251FF] text-sm flex-shrink-0">→</span>
           <div className="p-3 rounded-lg bg-[#051C2C] text-center" style={{ flex: 8 }}>
             <p className="text-xs font-semibold text-white">Treatment bay</p>
-            <p className="text-[10px] text-[#B3E5FC] mt-0.5">1.5 – 6+ hrs depending on acuity</p>
+            <p className="text-[10px] text-[#B3C6FF] mt-0.5">1.5 – 6+ hrs depending on acuity</p>
           </div>
-          <span className="text-[#00A9F4] text-sm flex-shrink-0">→</span>
-          <div className="p-3 rounded-lg bg-[#EBF8FF] border border-[#B3E5FC] text-center" style={{ flex: 2 }}>
+          <span className="text-[#2251FF] text-sm flex-shrink-0">→</span>
+          <div className="p-3 rounded-lg bg-[#EBF8FF] border border-[#B3C6FF] text-center" style={{ flex: 2 }}>
             <p className="text-xs font-semibold text-[#051C2C]">Discharge or admit</p>
             <p className="text-[10px] text-[#6B7280] mt-0.5">~20 – 30 min</p>
           </div>
@@ -197,7 +197,7 @@ export default function ContextPage() {
                 </div>
                 <div className="flex-1">
                   <div className="h-6 rounded bg-[#E5E7EB] overflow-hidden">
-                    <div className="h-full rounded bg-[#00A9F4] flex items-center px-2" style={{ width: a.width }}>
+                    <div className="h-full rounded bg-[#2251FF] flex items-center px-2" style={{ width: a.width }}>
                       <span className="text-[10px] text-white font-medium whitespace-nowrap">{a.time}</span>
                     </div>
                   </div>
@@ -215,17 +215,17 @@ export default function ContextPage() {
         <p className="text-sm text-[#6B7280] mb-8">Each OR typically runs 2 sessions/day. Surgery is the longest phase by far.</p>
 
         <div className="flex items-center gap-2 mb-6">
-          <div className="p-3 rounded-lg bg-[#EBF8FF] border border-[#B3E5FC] text-center" style={{ flex: 2 }}>
+          <div className="p-3 rounded-lg bg-[#EBF8FF] border border-[#B3C6FF] text-center" style={{ flex: 2 }}>
             <p className="text-xs font-semibold text-[#051C2C]">Pre-op</p>
             <p className="text-[10px] text-[#6B7280] mt-0.5">~30 – 45 min</p>
           </div>
-          <span className="text-[#00A9F4] text-sm flex-shrink-0">→</span>
+          <span className="text-[#2251FF] text-sm flex-shrink-0">→</span>
           <div className="p-3 rounded-lg bg-[#051C2C] text-center" style={{ flex: 8 }}>
             <p className="text-xs font-semibold text-white">Surgery</p>
-            <p className="text-[10px] text-[#B3E5FC] mt-0.5">50 – 190 min depending on specialty</p>
+            <p className="text-[10px] text-[#B3C6FF] mt-0.5">50 – 190 min depending on specialty</p>
           </div>
-          <span className="text-[#00A9F4] text-sm flex-shrink-0">→</span>
-          <div className="p-3 rounded-lg bg-[#EBF8FF] border border-[#B3E5FC] text-center" style={{ flex: 2 }}>
+          <span className="text-[#2251FF] text-sm flex-shrink-0">→</span>
+          <div className="p-3 rounded-lg bg-[#EBF8FF] border border-[#B3C6FF] text-center" style={{ flex: 2 }}>
             <p className="text-xs font-semibold text-[#051C2C]">Turnover</p>
             <p className="text-[10px] text-[#6B7280] mt-0.5">~25 – 40 min</p>
           </div>
@@ -268,7 +268,7 @@ export default function ContextPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="card-subtle p-5">
             <p className="text-xs font-semibold text-[#051C2C] mb-4 flex items-center gap-2">
-              <span className="inline-block w-2 h-2 rounded-full bg-[#00A9F4]" />
+              <span className="inline-block w-2 h-2 rounded-full bg-[#2251FF]" />
               Emergency department expansions
             </p>
             <div className="space-y-3">
@@ -283,7 +283,7 @@ export default function ContextPage() {
                     <p className="text-[10px] text-[#6B7280]">{e.note}</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-xs font-semibold text-[#00A9F4]">{e.bays}</p>
+                    <p className="text-xs font-semibold text-[#2251FF]">{e.bays}</p>
                     <p className="text-[10px] text-[#6B7280]">{e.year}</p>
                   </div>
                 </div>

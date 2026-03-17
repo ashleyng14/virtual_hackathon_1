@@ -23,7 +23,7 @@ export default function MethodologyPage() {
   return (
     <div>
       <PageSection className="pt-24 text-center">
-        <p className="text-sm font-medium text-[#00A9F4] mb-3">Our approach</p>
+        <p className="text-sm font-medium text-[#2251FF] mb-3">Our approach</p>
         <h1 className="text-3xl md:text-4xl font-bold text-[#051C2C] max-w-2xl mx-auto leading-tight">
           From data collection to decisions
         </h1>
@@ -73,8 +73,8 @@ export default function MethodologyPage() {
             <h4 className="text-xs font-semibold text-[#051C2C] mb-1">Demand projection</h4>
             <p className="text-xs text-[#6B7280]">Compound growth from baseline, adjusted for aging, disease burden, and diversion.</p>
           </GlassCard>
-          <GlassCard accent="#00A9F4">
-            <h4 className="text-xs font-semibold text-[#00A9F4] mb-1">Capacity model</h4>
+          <GlassCard accent="#2251FF">
+            <h4 className="text-xs font-semibold text-[#2251FF] mb-1">Capacity model</h4>
             <p className="text-xs text-[#6B7280]">Throughput = available units × operating hours × utilization ÷ treatment time.</p>
           </GlassCard>
         </div>
@@ -95,7 +95,7 @@ export default function MethodologyPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {[
             { name: "Base case", desc: "Expected trajectory with moderate growth and planned efficiency gains.", color: "#051C2C" },
-            { name: "Best case", desc: "Lower demand growth, stronger efficiency improvements, more diversion to primary care.", color: "#00A9F4" },
+            { name: "Best case", desc: "Lower demand growth, stronger efficiency improvements, more diversion to primary care.", color: "#2251FF" },
             { name: "Surge case", desc: "Higher growth, elevated disease burden, minimal efficiency gains.", color: "#DC2626" },
           ].map((s) => (
             <GlassCard key={s.name} accent={s.color}>

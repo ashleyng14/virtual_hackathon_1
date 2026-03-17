@@ -83,15 +83,15 @@ export default function DemandCapacityChart({ data, domain }: DemandCapacityChar
               <ReferenceArea
                 x1={2029}
                 x2={2031}
-                fill="#00A9F4"
+                fill="#2251FF"
                 fillOpacity={0.06}
-                stroke="#00A9F4"
+                stroke="#2251FF"
                 strokeOpacity={0.2}
                 strokeDasharray="4 4"
                 label={{
                   value: "Expansion phase",
                   position: "insideTop",
-                  fill: "#00A9F4",
+                  fill: "#2251FF",
                   fontSize: 10,
                 }}
               />
@@ -136,7 +136,7 @@ export default function DemandCapacityChart({ data, domain }: DemandCapacityChar
       {hasExpansion && (
         <div className="flex items-center gap-4 mt-3 px-1 text-[11px]">
           <div className="flex items-center gap-1.5">
-            <div className="w-4 h-0.5 bg-[#00A9F4]" />
+            <div className="w-4 h-0.5 bg-[#2251FF]" />
             <span className="text-[#374151]">Capacity</span>
           </div>
           <div className="flex items-center gap-1.5">
@@ -144,7 +144,7 @@ export default function DemandCapacityChart({ data, domain }: DemandCapacityChar
             <span className="text-[#374151]">Demand</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <div className="w-3 h-3 rounded bg-[#00A9F4] opacity-10 border border-[#00A9F4] border-dashed" />
+            <div className="w-3 h-3 rounded bg-[#2251FF] opacity-10 border border-[#2251FF] border-dashed" />
             <span className="text-[#374151]">
               Expansion 2029–31: +{(expansionDelta / 1000).toFixed(1)}K {domain === "ED" ? "visits" : "cases"} capacity
             </span>

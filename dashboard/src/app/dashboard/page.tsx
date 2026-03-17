@@ -212,12 +212,12 @@ export default function DashboardPage() {
                 </>
               ) : (
                 <>
-                  <p className="text-[10px] font-semibold text-[#00A9F4] uppercase tracking-wider mb-2">Demand drivers</p>
+                  <p className="text-[10px] font-semibold text-[#2251FF] uppercase tracking-wider mb-2">Demand drivers</p>
                   <SliderWithCitation label="Population growth" value={orDrivers.pop_growth_rate} min={0} max={0.06} step={0.001} unit="%" citation={OR_DRIVER_CITATIONS.pop_growth_rate.source} scenarioValues={OR_DRIVER_CITATIONS.pop_growth_rate} onChange={(v) => setOrDrivers((p) => ({ ...p, pop_growth_rate: v }))} />
                   <SliderWithCitation label="Aging effect" value={orDrivers.aging_effect_multiplier_2035} min={1} max={1.15} step={0.01} unit="x" citation={OR_DRIVER_CITATIONS.aging_effect_multiplier_2035.source} scenarioValues={OR_DRIVER_CITATIONS.aging_effect_multiplier_2035} onChange={(v) => setOrDrivers((p) => ({ ...p, aging_effect_multiplier_2035: v }))} />
                   <SliderWithCitation label="Disease burden" value={orDrivers.disease_burden_multiplier_2035} min={1} max={1.2} step={0.01} unit="x" citation={OR_DRIVER_CITATIONS.disease_burden_multiplier_2035.source} scenarioValues={OR_DRIVER_CITATIONS.disease_burden_multiplier_2035} onChange={(v) => setOrDrivers((p) => ({ ...p, disease_burden_multiplier_2035: v }))} />
                   <div className="border-t border-[#E5E7EB] my-3" />
-                  <p className="text-[10px] font-semibold text-[#00A9F4] uppercase tracking-wider mb-2">Capacity</p>
+                  <p className="text-[10px] font-semibold text-[#2251FF] uppercase tracking-wider mb-2">Capacity</p>
                   <SliderWithCitation label="Utilization target" value={orUtilOverride ?? DATA.orCapacity[0].util_target[scenario]} min={0.5} max={0.95} step={0.01} unit="%" citation="International benchmarks; adjusted for local conditions" scenarioValues={{ base: 0.78, best: 0.82, surge: 0.70 }} onChange={(v) => setOrUtilOverride(v)} />
                 </>
               )}

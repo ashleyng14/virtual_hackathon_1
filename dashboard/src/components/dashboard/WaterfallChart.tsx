@@ -28,7 +28,7 @@ function CustomTooltip({ active, payload }: { active?: boolean; payload?: Array<
   return (
     <div className="bg-white border border-[#E5E7EB] rounded-lg p-2.5 shadow-sm text-xs">
       <p className="font-semibold text-[#051C2C]">{d.label}</p>
-      <p className={d.value >= 0 ? "text-[#051C2C]" : "text-[#00A9F4]"}>
+      <p className={d.value >= 0 ? "text-[#051C2C]" : "text-[#2251FF]"}>
         {d.value >= 0 ? "+" : ""}{d.value.toLocaleString()}
       </p>
     </div>

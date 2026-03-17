@@ -76,10 +76,10 @@ const orExpandSites = [...new Set(DATA.expansion.filter((e) => e.setting === "OR
 
 const SITE_COLORS: Record<string, string> = {
   "Central ED": "#051C2C",
-  "North ED": "#00A9F4",
+  "North ED": "#2251FF",
   "West ED": "#374151",
   "Central OR": "#051C2C",
-  "North OR": "#00A9F4",
+  "North OR": "#2251FF",
   "West OR": "#374151",
 };
 
@@ -124,7 +124,7 @@ const orCapTimeline = buildCapacityTimeline("OR");
 
 const ED_SITE_COLORS: Record<string, string> = {
   "Central ED": "#051C2C",
-  "North ED": "#00A9F4",
+  "North ED": "#2251FF",
   "West ED": "#374151",
   "Airport ED": "#6B7280",
   "Private ED A": "#D97706",
@@ -132,7 +132,7 @@ const ED_SITE_COLORS: Record<string, string> = {
 };
 const OR_SITE_COLORS: Record<string, string> = {
   "Central OR": "#051C2C",
-  "North OR": "#00A9F4",
+  "North OR": "#2251FF",
   "West OR": "#374151",
   "Womens OR": "#D97706",
   "Private OR": "#059669",
@@ -143,7 +143,7 @@ export default function DataPage() {
     <div>
       {/* Hero */}
       <PageSection className="pt-24 text-center">
-        <p className="text-sm font-medium text-[#00A9F4] mb-3">Data breakdown</p>
+        <p className="text-sm font-medium text-[#2251FF] mb-3">Data breakdown</p>
         <h1 className="text-3xl md:text-4xl font-bold text-[#051C2C] max-w-2xl mx-auto leading-tight">
           From bays and rooms to patient capacity
         </h1>
@@ -163,7 +163,7 @@ export default function DataPage() {
         <div className="card-subtle p-6 mb-6">
           <p className="text-xs font-semibold text-[#051C2C] mb-4">Formula</p>
           <div className="flex flex-wrap items-center gap-2 text-sm">
-            <span className="px-3 py-1.5 rounded bg-[#00A9F4]/10 text-[#051C2C] font-semibold">
+            <span className="px-3 py-1.5 rounded bg-[#2251FF]/10 text-[#051C2C] font-semibold">
               Patients per bay per year
             </span>
             <span className="text-[#6B7280]">=</span>
@@ -207,8 +207,8 @@ export default function DataPage() {
                 <th className="text-right py-2 px-3 text-[#051C2C] font-semibold">Physical bays</th>
                 <th className="text-right py-2 px-3 text-[#051C2C] font-semibold">Staffed bays</th>
                 <th className="text-right py-2 px-3 text-[#051C2C] font-semibold">Util. target</th>
-                <th className="text-right py-2 px-3 text-[#00A9F4] font-semibold">Patients/bay/yr</th>
-                <th className="text-right py-2 pl-3 text-[#00A9F4] font-semibold">Total capacity/yr</th>
+                <th className="text-right py-2 px-3 text-[#2251FF] font-semibold">Patients/bay/yr</th>
+                <th className="text-right py-2 pl-3 text-[#2251FF] font-semibold">Total capacity/yr</th>
               </tr>
             </thead>
             <tbody>
@@ -220,8 +220,8 @@ export default function DataPage() {
                     <td className="py-2 px-3 text-right text-[#374151]">{site.bays_physical_2025}</td>
                     <td className="py-2 px-3 text-right text-[#374151]">{site.bays_staffed_2025}</td>
                     <td className="py-2 px-3 text-right text-[#374151]">{(site.bay_util_target.base * 100).toFixed(0)}%</td>
-                    <td className="py-2 px-3 text-right font-semibold text-[#00A9F4]">{ppy.toLocaleString()}</td>
-                    <td className="py-2 pl-3 text-right font-semibold text-[#00A9F4]">{(site.bays_staffed_2025 * ppy).toLocaleString()}</td>
+                    <td className="py-2 px-3 text-right font-semibold text-[#2251FF]">{ppy.toLocaleString()}</td>
+                    <td className="py-2 pl-3 text-right font-semibold text-[#2251FF]">{(site.bays_staffed_2025 * ppy).toLocaleString()}</td>
                   </tr>
                 );
               })}
@@ -235,7 +235,7 @@ export default function DataPage() {
                 </td>
                 <td className="py-2 px-3 text-right text-[#6B7280]">—</td>
                 <td className="py-2 px-3 text-right text-[#6B7280]">—</td>
-                <td className="py-2 pl-3 text-right text-[#00A9F4]">
+                <td className="py-2 pl-3 text-right text-[#2251FF]">
                   {DATA.edSites
                     .reduce((s, site) => s + site.bays_staffed_2025 * edPatientsPerBay(site.bay_util_target.base), 0)
                     .toLocaleString()}
@@ -245,9 +245,9 @@ export default function DataPage() {
           </table>
         </div>
 
-        <div className="mt-4 p-3 rounded-lg bg-[#F0F9FF] border border-[#00A9F4]/20">
+        <div className="mt-4 p-3 rounded-lg bg-[#EEF1FF] border border-[#2251FF]/20">
           <p className="text-xs text-[#051C2C]">
-            <span className="font-semibold">Key insight:</span> At {(DATA.edSites[0].bay_util_target.base * 100).toFixed(0)}% target utilization, one ED bay can serve <span className="font-bold text-[#00A9F4]">~{edPatientsPerBay(0.75).toLocaleString()} patients/year</span>. Across {DATA.edSites.reduce((s, site) => s + site.bays_staffed_2025, 0)} staffed bays, the system has ~{DATA.edSites.reduce((s, site) => s + site.bays_staffed_2025 * edPatientsPerBay(site.bay_util_target.base), 0).toLocaleString()} annual visit capacity.
+            <span className="font-semibold">Key insight:</span> At {(DATA.edSites[0].bay_util_target.base * 100).toFixed(0)}% target utilization, one ED bay can serve <span className="font-bold text-[#2251FF]">~{edPatientsPerBay(0.75).toLocaleString()} patients/year</span>. Across {DATA.edSites.reduce((s, site) => s + site.bays_staffed_2025, 0)} staffed bays, the system has ~{DATA.edSites.reduce((s, site) => s + site.bays_staffed_2025 * edPatientsPerBay(site.bay_util_target.base), 0).toLocaleString()} annual visit capacity.
           </p>
         </div>
       </PageSection>
@@ -262,7 +262,7 @@ export default function DataPage() {
         <div className="card-subtle p-6 mb-6">
           <p className="text-xs font-semibold text-[#051C2C] mb-4">Formula</p>
           <div className="flex flex-wrap items-center gap-2 text-sm">
-            <span className="px-3 py-1.5 rounded bg-[#00A9F4]/10 text-[#051C2C] font-semibold">
+            <span className="px-3 py-1.5 rounded bg-[#2251FF]/10 text-[#051C2C] font-semibold">
               Cases per room per year
             </span>
             <span className="text-[#6B7280]">=</span>
@@ -343,8 +343,8 @@ export default function DataPage() {
                 <th className="text-right py-2 px-3 text-[#051C2C] font-semibold">Staffed rooms</th>
                 <th className="text-right py-2 px-3 text-[#051C2C] font-semibold">Util. target</th>
                 <th className="text-right py-2 px-3 text-[#051C2C] font-semibold">Wtd. slot (min)</th>
-                <th className="text-right py-2 px-3 text-[#00A9F4] font-semibold">Cases/room/yr</th>
-                <th className="text-right py-2 pl-3 text-[#00A9F4] font-semibold">Total capacity/yr</th>
+                <th className="text-right py-2 px-3 text-[#2251FF] font-semibold">Cases/room/yr</th>
+                <th className="text-right py-2 pl-3 text-[#2251FF] font-semibold">Total capacity/yr</th>
               </tr>
             </thead>
             <tbody>
@@ -358,8 +358,8 @@ export default function DataPage() {
                     <td className="py-2 px-3 text-right text-[#374151]">{site.or_rooms_staffed_2025}</td>
                     <td className="py-2 px-3 text-right text-[#374151]">{(site.util_target.base * 100).toFixed(0)}%</td>
                     <td className="py-2 px-3 text-right text-[#374151]">{ws ? Math.round(ws) : "—"}</td>
-                    <td className="py-2 px-3 text-right font-semibold text-[#00A9F4]">{cpr?.toLocaleString() ?? "—"}</td>
-                    <td className="py-2 pl-3 text-right font-semibold text-[#00A9F4]">
+                    <td className="py-2 px-3 text-right font-semibold text-[#2251FF]">{cpr?.toLocaleString() ?? "—"}</td>
+                    <td className="py-2 pl-3 text-right font-semibold text-[#2251FF]">
                       {cpr ? (site.or_rooms_staffed_2025 * cpr).toLocaleString() : "—"}
                     </td>
                   </tr>
@@ -374,7 +374,7 @@ export default function DataPage() {
                   {DATA.orCapacity.reduce((s, site) => s + site.or_rooms_staffed_2025, 0)}
                 </td>
                 <td className="py-2 px-3 text-right text-[#6B7280]" colSpan={2}>—</td>
-                <td className="py-2 pl-3 text-right text-[#00A9F4]" colSpan={2}>
+                <td className="py-2 pl-3 text-right text-[#2251FF]" colSpan={2}>
                   {DATA.orCapacity
                     .reduce((s, site) => {
                       const cpr = orCasesPerRoom(site.site, site.util_target.base, site.sessions_per_room_per_day, site.session_minutes);
@@ -387,7 +387,7 @@ export default function DataPage() {
           </table>
         </div>
 
-        <div className="mt-4 p-3 rounded-lg bg-[#F0F9FF] border border-[#00A9F4]/20">
+        <div className="mt-4 p-3 rounded-lg bg-[#EEF1FF] border border-[#2251FF]/20">
           <p className="text-xs text-[#051C2C]">
             <span className="font-semibold">Key difference from ED:</span> OR throughput varies by site because each has a different specialty mix. A site doing mostly cardiac/ortho surgeries (~180 min slots) handles fewer cases per room than one focused on ENT/urology (~100 min slots). ED throughput is more uniform since treatment times depend on acuity mix, which is similar across sites.
           </p>
@@ -398,8 +398,8 @@ export default function DataPage() {
       <PageSection>
         <h2 className="text-xl font-bold text-[#051C2C] mb-6">ED vs OR: throughput comparison</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <GlassCard accent="#00A9F4">
-            <p className="text-xs font-semibold text-[#00A9F4] mb-1">Emergency department</p>
+          <GlassCard accent="#2251FF">
+            <p className="text-xs font-semibold text-[#2251FF] mb-1">Emergency department</p>
             <p className="text-3xl font-bold text-[#051C2C]">~{edPatientsPerBay(0.75).toLocaleString()}</p>
             <p className="text-sm text-[#6B7280] mt-1">patients per bay per year</p>
             <div className="mt-4 space-y-1.5 text-xs text-[#374151]">
@@ -410,7 +410,7 @@ export default function DataPage() {
             </div>
           </GlassCard>
           <GlassCard accent="#051C2C">
-            <p className="text-xs font-semibold text-[#00A9F4] mb-1">Operating room</p>
+            <p className="text-xs font-semibold text-[#2251FF] mb-1">Operating room</p>
             <p className="text-3xl font-bold text-[#051C2C]">
               ~{orCasesPerRoom("Central OR", 0.78, 2, 240)?.toLocaleString() ?? "—"}
               <span className="text-base font-normal text-[#6B7280] ml-1">to {orCasesPerRoom("Private OR", 0.79, 2, 240)?.toLocaleString() ?? "—"}</span>

@@ -1,6 +1,6 @@
 export const COLORS = {
   navy: "#051C2C",
-  blue: "#00A9F4",
+  blue: "#2251FF",
   grey700: "#374151",
   grey500: "#6B7280",
   grey300: "#D1D5DB",
@@ -11,11 +11,11 @@ export const COLORS = {
   green: "#059669",
   amber: "#D97706",
   demandLine: "#051C2C",
-  capacityFill: "#00A9F4",
+  capacityFill: "#2251FF",
   gapFill: "rgba(220, 38, 38, 0.12)",
   waterfall: {
     increase: "#051C2C",
-    decrease: "#00A9F4",
+    decrease: "#2251FF",
     total: "#374151",
   },
 } as const;
