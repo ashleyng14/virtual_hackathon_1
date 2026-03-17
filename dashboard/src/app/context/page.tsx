@@ -49,45 +49,109 @@ export default function ContextPage() {
         </div>
       </PageSection>
 
+      {/* ED flow — box widths proportional to time */}
       <PageSection>
         <h2 className="text-xl font-bold text-[#051C2C] mb-2">How an emergency department works</h2>
-        <p className="text-sm text-[#6B7280] mb-8">Patients are triaged by severity, treated in a bay, then discharged or admitted.</p>
-        <div className="flex flex-col md:flex-row items-stretch gap-3">
-          {[
-            { label: "Arrival", time: "" },
-            { label: "Triage", time: "Assess acuity" },
-            { label: "Treatment bay", time: "1.5 – 6 hrs" },
-            { label: "Discharge or admit", time: "" },
-          ].map((s, i) => (
-            <div key={s.label} className="flex items-center gap-3 flex-1">
-              <div className="card-subtle p-4 flex-1 text-center">
-                <p className="text-sm font-medium text-[#051C2C]">{s.label}</p>
-                {s.time && <p className="text-xs text-[#6B7280] mt-0.5">{s.time}</p>}
+        <p className="text-sm text-[#6B7280] mb-8">Each step takes a different amount of time. The box width below reflects that.</p>
+
+        <div className="flex items-center gap-2 mb-6">
+          <div className="p-3 rounded-lg bg-[#EBF8FF] border border-[#B3E5FC] text-center" style={{ flex: 1 }}>
+            <p className="text-xs font-semibold text-[#051C2C]">Arrival</p>
+            <p className="text-[10px] text-[#6B7280] mt-0.5">Walk-in or ambulance</p>
+          </div>
+          <span className="text-[#00A9F4] text-sm flex-shrink-0">→</span>
+          <div className="p-3 rounded-lg bg-[#EBF8FF] border border-[#B3E5FC] text-center" style={{ flex: 2 }}>
+            <p className="text-xs font-semibold text-[#051C2C]">Triage</p>
+            <p className="text-[10px] text-[#6B7280] mt-0.5">~15 – 30 min</p>
+          </div>
+          <span className="text-[#00A9F4] text-sm flex-shrink-0">→</span>
+          <div className="p-3 rounded-lg bg-[#051C2C] text-center" style={{ flex: 8 }}>
+            <p className="text-xs font-semibold text-white">Treatment bay</p>
+            <p className="text-[10px] text-[#B3E5FC] mt-0.5">1.5 – 6+ hrs depending on acuity</p>
+          </div>
+          <span className="text-[#00A9F4] text-sm flex-shrink-0">→</span>
+          <div className="p-3 rounded-lg bg-[#EBF8FF] border border-[#B3E5FC] text-center" style={{ flex: 2 }}>
+            <p className="text-xs font-semibold text-[#051C2C]">Discharge or admit</p>
+            <p className="text-[10px] text-[#6B7280] mt-0.5">~20 – 30 min</p>
+          </div>
+        </div>
+
+        <div className="card-subtle p-4">
+          <p className="text-xs font-semibold text-[#051C2C] mb-2">Treatment time by acuity level</p>
+          <div className="space-y-2">
+            {[
+              { level: "High acuity", pct: "~6%", time: "~6 hrs", desc: "Cardiac emergencies, major trauma, stroke", width: "100%" },
+              { level: "Medium acuity", pct: "~44%", time: "~3 hrs", desc: "Fractures, abdominal pain, chest pain", width: "50%" },
+              { level: "Low acuity", pct: "~50%", time: "~1.5 hrs", desc: "Minor lacerations, sprains, fever", width: "25%" },
+            ].map((a) => (
+              <div key={a.level} className="flex items-center gap-3">
+                <div className="w-28 flex-shrink-0">
+                  <p className="text-[11px] font-medium text-[#051C2C]">{a.level}</p>
+                  <p className="text-[10px] text-[#6B7280]">{a.pct} of visits</p>
+                </div>
+                <div className="flex-1">
+                  <div className="h-6 rounded bg-[#E5E7EB] overflow-hidden">
+                    <div className="h-full rounded bg-[#00A9F4] flex items-center px-2" style={{ width: a.width }}>
+                      <span className="text-[10px] text-white font-medium whitespace-nowrap">{a.time}</span>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-[10px] text-[#6B7280] w-48 flex-shrink-0 hidden md:block">e.g. {a.desc}</p>
               </div>
-              {i < 3 && <span className="text-[#D1D5DB] hidden md:block">→</span>}
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </PageSection>
 
+      {/* OR flow — box widths proportional to time */}
       <PageSection>
         <h2 className="text-xl font-bold text-[#051C2C] mb-2">How an operating room works</h2>
-        <p className="text-sm text-[#6B7280] mb-8">Each OR runs ~2 sessions/day. Case duration varies by specialty.</p>
-        <div className="flex flex-col md:flex-row items-stretch gap-3">
-          {[
-            { label: "Scheduled case", time: "" },
-            { label: "Pre-op", time: "" },
-            { label: "Surgery", time: "65 – 135 min" },
-            { label: "Turnover", time: "25 – 35 min" },
-          ].map((s, i) => (
-            <div key={s.label} className="flex items-center gap-3 flex-1">
-              <div className="card-subtle p-4 flex-1 text-center">
-                <p className="text-sm font-medium text-[#051C2C]">{s.label}</p>
-                {s.time && <p className="text-xs text-[#6B7280] mt-0.5">{s.time}</p>}
+        <p className="text-sm text-[#6B7280] mb-8">Each OR typically runs 2 sessions/day. Surgery is the longest phase by far.</p>
+
+        <div className="flex items-center gap-2 mb-6">
+          <div className="p-3 rounded-lg bg-[#EBF8FF] border border-[#B3E5FC] text-center" style={{ flex: 2 }}>
+            <p className="text-xs font-semibold text-[#051C2C]">Pre-op</p>
+            <p className="text-[10px] text-[#6B7280] mt-0.5">~30 – 45 min</p>
+          </div>
+          <span className="text-[#00A9F4] text-sm flex-shrink-0">→</span>
+          <div className="p-3 rounded-lg bg-[#051C2C] text-center" style={{ flex: 8 }}>
+            <p className="text-xs font-semibold text-white">Surgery</p>
+            <p className="text-[10px] text-[#B3E5FC] mt-0.5">50 – 190 min depending on specialty</p>
+          </div>
+          <span className="text-[#00A9F4] text-sm flex-shrink-0">→</span>
+          <div className="p-3 rounded-lg bg-[#EBF8FF] border border-[#B3E5FC] text-center" style={{ flex: 2 }}>
+            <p className="text-xs font-semibold text-[#051C2C]">Turnover</p>
+            <p className="text-[10px] text-[#6B7280] mt-0.5">~25 – 40 min</p>
+          </div>
+        </div>
+
+        <div className="card-subtle p-4">
+          <p className="text-xs font-semibold text-[#051C2C] mb-2">Average surgery duration by specialty</p>
+          <div className="space-y-2">
+            {[
+              { specialty: "Cardiac", time: "~190 min", desc: "Bypass, valve replacement", width: "100%" },
+              { specialty: "General surgery", time: "~150 min", desc: "Appendectomy, hernia, cholecystectomy", width: "79%" },
+              { specialty: "Orthopaedics", time: "~150 min", desc: "Joint replacement, fracture fixation", width: "79%" },
+              { specialty: "ENT", time: "~130 min", desc: "Tonsillectomy, sinus surgery", width: "68%" },
+              { specialty: "Urology", time: "~95 min", desc: "Prostatectomy, kidney stones", width: "50%" },
+              { specialty: "OB/GYN", time: "~80 min", desc: "C-section, hysterectomy", width: "42%" },
+            ].map((s) => (
+              <div key={s.specialty} className="flex items-center gap-3">
+                <div className="w-28 flex-shrink-0">
+                  <p className="text-[11px] font-medium text-[#051C2C]">{s.specialty}</p>
+                </div>
+                <div className="flex-1">
+                  <div className="h-6 rounded bg-[#E5E7EB] overflow-hidden">
+                    <div className="h-full rounded bg-[#051C2C] flex items-center px-2" style={{ width: s.width }}>
+                      <span className="text-[10px] text-white font-medium whitespace-nowrap">{s.time}</span>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-[10px] text-[#6B7280] w-48 flex-shrink-0 hidden md:block">e.g. {s.desc}</p>
               </div>
-              {i < 3 && <span className="text-[#D1D5DB] hidden md:block">→</span>}
-            </div>
-          ))}
+            ))}
+          </div>
+          <p className="text-[10px] text-[#6B7280] mt-3 italic">Source: JAMA Surgery (2022), PMC/NCBl university hospital study</p>
         </div>
       </PageSection>
 
